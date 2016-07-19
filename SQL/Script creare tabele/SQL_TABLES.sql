@@ -1,0 +1,39 @@
+create table locations
+(
+  LOCATION_ID     NUMBER PRIMARY KEY,
+  STREET_ADDRESS  VARCHAR2(40),
+  POSTAL_CODE     VARCHAR2(12),
+  CITY            VARCHAR2(30)     NOT NULL,
+  STATE_PROVINCE  VARCHAR2(25)
+ );
+ 
+create table departments
+(
+  DEPARTMENT_ID    NUMBER PRIMARY KEY,
+  DEPARTMENT_NAME  VARCHAR2(30)            NOT NULL,
+  LOCATION_ID      NUMBER
+
+);
+
+create table jobs
+(
+JOB_ID      VARCHAR2(10) PRIMARY KEY,
+  JOB_TITLE   VARCHAR2(35)                 NOT NULL,
+  MIN_SALARY  NUMBER(6),
+  MAX_SALARY  NUMBER(6)
+);
+
+create table employees
+(
+EMPLOYEE_ID     NUMBER PRIMARY KEY,
+  FIRST_NAME      VARCHAR2(20),
+  LAST_NAME       VARCHAR2(25)     NOT NULL,
+  EMAIL           VARCHAR2(25)     NOT NULL,
+  PHONE_NUMBER    VARCHAR2(20),
+  HIRE_DATE       DATE                  NOT NULL,
+  JOB_ID          VARCHAR2(10)     NOT NULL,
+  SALARY          NUMBER(8,2),
+  COMMISSION_PCT  NUMBER(2,2),
+  MANAGER_ID      NUMBER,
+  DEPARTMENT_ID   NUMBER
+);

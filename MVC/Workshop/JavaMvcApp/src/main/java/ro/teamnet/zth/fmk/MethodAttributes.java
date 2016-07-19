@@ -1,5 +1,9 @@
 package ro.teamnet.zth.fmk;
 
+import java.lang.reflect.Parameter;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * MethodAttributes.java
  */
@@ -8,6 +12,15 @@ public class MethodAttributes {
     String controllerClass;
     String methodName;
     String methodType;
+    private Class[] parameterList;
+
+    public Class[] getParameterList() {
+        return parameterList;
+    }
+
+    public void setParameterList(Class[] parameterList) {
+        this.parameterList = parameterList;
+    }
 
     public String getControllerClass() {
         return controllerClass;
